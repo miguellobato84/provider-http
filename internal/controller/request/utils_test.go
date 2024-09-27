@@ -9,7 +9,7 @@ import (
 
 var (
 	testPostMapping = v1alpha2.Mapping{
-		Method: "POST",
+		Method: "CREATE",
 		Body:   "{ username: .payload.body.username, email: .payload.body.email }",
 		URL:    ".payload.baseUrl",
 	}
@@ -57,7 +57,7 @@ func Test_getMappingByMethod(t *testing.T) {
 						testDeleteMapping,
 					},
 				},
-				method: "POST",
+				method: "CREATE",
 			},
 			want: want{
 				mapping: nil,
@@ -78,7 +78,7 @@ func Test_getMappingByMethod(t *testing.T) {
 						testDeleteMapping,
 					},
 				},
-				method: "POST",
+				method: "CREATE",
 			},
 			want: want{
 				mapping: &testPostMapping,

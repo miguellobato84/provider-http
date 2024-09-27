@@ -9,7 +9,7 @@ import (
 
 var (
 	testPostMapping = v1alpha2.Mapping{
-		Method: "POST",
+		Method: "CREATE",
 		Body:   "{ username: .payload.body.username, email: .payload.body.email }",
 		URL:    ".payload.baseUrl",
 		// Headers: testHeaders,
@@ -272,7 +272,7 @@ func Test_StructToMap(t *testing.T) {
 					"mappings": []any{
 						map[string]any{
 							"body":   "{ username: .payload.body.username, email: .payload.body.email }",
-							"method": "POST",
+							"method": "CREATE",
 							"url":    ".payload.baseUrl",
 						},
 						map[string]any{

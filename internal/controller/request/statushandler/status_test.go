@@ -28,12 +28,12 @@ var testHeaders = map[string][]string{
 }
 
 const (
-	testMethod = "POST"
+	testMethod = "CREATE"
 )
 
 var (
 	testPostMapping = v1alpha2.Mapping{
-		Method: "POST",
+		Method: "CREATE",
 		Body:   "{ username: .payload.body.username, email: .payload.body.email }",
 		URL:    ".payload.baseUrl",
 	}

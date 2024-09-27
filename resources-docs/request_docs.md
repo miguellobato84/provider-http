@@ -25,7 +25,7 @@ Here is an example `Request` resource definition:
             "username": "Dan"
           }
       mappings:
-        - method: "POST"
+        - method: "CREATE"
           body: |
             {
               username: .payload.body.name, 

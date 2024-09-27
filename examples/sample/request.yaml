@@ -22,7 +22,7 @@ spec:
           "age": 30
         }
     mappings:
-      - method: "POST"
+      - method: "CREATE"
         body: |
           {
             username: .payload.body.username, 

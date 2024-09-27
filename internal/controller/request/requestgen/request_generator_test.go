@@ -26,7 +26,7 @@ var testHeaders2 = map[string][]string{
 
 var (
 	testPostMapping = v1alpha2.Mapping{
-		Method:  "POST",
+		Method:  "CREATE",
 		Body:    "{ username: .payload.body.username, email: .payload.body.email }",
 		URL:     ".payload.baseUrl",
 		Headers: testHeaders,
@@ -387,7 +387,7 @@ func Test_generateRequestObject(t *testing.T) {
 					"mappings": []any{
 						map[string]any{
 							"body":   "{ username: .payload.body.username, email: .payload.body.email }",
-							"method": "POST",
+							"method": "CREATE",
 							"headers": map[string]any{
 								"colors":                []any{"red", "green", "blue"},
 								"countries":             []any{"USA", "UK", "India", "Germany"},

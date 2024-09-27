@@ -11,7 +11,7 @@ var testJQObject = map[string]any{
 	"mappings": []any{
 		map[string]any{
 			"body":   "{ username: .payload.body.username, email: .payload.body.email }",
-			"method": "POST",
+			"method": "CREATE",
 			"url":    ".payload.baseUrl",
 		},
 		map[string]any{

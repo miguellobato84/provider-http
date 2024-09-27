@@ -18,7 +18,7 @@ var (
 
 var (
 	testPostMapping = v1alpha1_request.Mapping{
-		Method: "POST",
+		Method: "CREATE",
 		Body:   "{ username: .payload.body.username, email: .payload.body.email }",
 		URL:    ".payload.baseUrl",
 	}

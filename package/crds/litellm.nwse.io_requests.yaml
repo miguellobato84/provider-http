@@ -97,7 +97,7 @@ spec:
                             type: object
                           method:
                             enum:
-                              - POST
+                              - CREATE
                               - GET
                               - PUT
                               - DELETE
@@ -385,7 +385,7 @@ spec:
                       type: object
                     method:
                       enum:
-                        - POST
+                        - CREATE
                         - GET
                         - PUT
                         - DELETE
@@ -501,7 +501,7 @@ spec:
                             type: object
                           method:
                             enum:
-                              - POST
+                              - CREATE
                               - GET
                               - PUT
                               - DELETE
@@ -841,7 +841,7 @@ spec:
                       type: object
                     method:
                       enum:
-                        - POST
+                        - CREATE
                         - GET
                         - PUT
                         - DELETE
