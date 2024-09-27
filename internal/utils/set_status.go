@@ -3,7 +3,7 @@ package utils
 import (
 	"context"
 
-	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
+	httpClient "github.com/miguellobato84/provider-http/internal/clients/http"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 )
 

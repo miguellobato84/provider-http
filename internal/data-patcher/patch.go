@@ -3,8 +3,8 @@ package datapatcher
 import (
 	"context"
 
-	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
-	kubehandler "github.com/new-work/provider-litellm/internal/kube-handler"
+	httpClient "github.com/miguellobato84/provider-http/internal/clients/http"
+	kubehandler "github.com/miguellobato84/provider-http/internal/kube-handler"
 	"github.com/crossplane/crossplane-runtime/pkg/logging"
 	"github.com/pkg/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

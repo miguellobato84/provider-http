@@ -12,10 +12,10 @@ import (
 	corev1 "k8s.io/api/core/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
-	"github.com/new-work/provider-litellm/internal/jq"
-	json_util "github.com/new-work/provider-litellm/internal/json"
-	kubehandler "github.com/new-work/provider-litellm/internal/kube-handler"
+	httpClient "github.com/miguellobato84/provider-http/internal/clients/http"
+	"github.com/miguellobato84/provider-http/internal/jq"
+	json_util "github.com/miguellobato84/provider-http/internal/json"
+	kubehandler "github.com/miguellobato84/provider-http/internal/kube-handler"
 	"github.com/crossplane/crossplane-runtime/pkg/logging"
 	"github.com/pkg/errors"
 )

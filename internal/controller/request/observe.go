@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/new-work/provider-litellm/apis/request/v1alpha2"
-	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
-	"github.com/new-work/provider-litellm/internal/controller/request/requestgen"
-	"github.com/new-work/provider-litellm/internal/json"
-	"github.com/new-work/provider-litellm/internal/utils"
+	"github.com/miguellobato84/provider-http/apis/request/v1alpha2"
+	httpClient "github.com/miguellobato84/provider-http/internal/clients/http"
+	"github.com/miguellobato84/provider-http/internal/controller/request/requestgen"
+	"github.com/miguellobato84/provider-http/internal/json"
+	"github.com/miguellobato84/provider-http/internal/utils"
 	"github.com/pkg/errors"
 )
 

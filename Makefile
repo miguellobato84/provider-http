@@ -2,7 +2,7 @@
 # Setup Project
 
 PROJECT_NAME := provider-litellm
-PROJECT_REPO := github.com/crossplane-contrib/$(PROJECT_NAME)
+PROJECT_REPO := github.com/miguellobato84/provider-http
 
 PLATFORMS ?= linux_amd64 linux_arm64
 

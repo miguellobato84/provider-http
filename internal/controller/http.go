@@ -22,8 +22,8 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/controller"
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	"github.com/new-work/provider-litellm/internal/controller/config"
-	request "github.com/new-work/provider-litellm/internal/controller/request"
+	"github.com/miguellobato84/provider-http/internal/controller/config"
+	request "github.com/miguellobato84/provider-http/internal/controller/request"
 )
 
 // Setup creates all http controllers with the supplied logger and adds them to

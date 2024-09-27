@@ -20,8 +20,8 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	requestv1alpha1 "github.com/new-work/provider-litellm/apis/request/v1alpha2"
-	httpv1alpha1 "github.com/new-work/provider-litellm/apis/v1alpha1"
+	requestv1alpha1 "github.com/miguellobato84/provider-http/apis/request/v1alpha2"
+	httpv1alpha1 "github.com/miguellobato84/provider-http/apis/v1alpha1"
 )
 
 func init() {

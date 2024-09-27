@@ -1,8 +1,8 @@
 package responseconverter
 
 import (
-	"github.com/new-work/provider-litellm/apis/request/v1alpha2"
-	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
+	"github.com/miguellobato84/provider-http/apis/request/v1alpha2"
+	httpClient "github.com/miguellobato84/provider-http/internal/clients/http"
 )
 
 // Convert HttpResponse to Response

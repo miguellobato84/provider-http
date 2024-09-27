@@ -7,8 +7,8 @@ import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/new-work/provider-litellm/apis/request/v1alpha2"
-	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
+	"github.com/miguellobato84/provider-http/apis/request/v1alpha2"
+	httpClient "github.com/miguellobato84/provider-http/internal/clients/http"
 	xpv1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 	"github.com/crossplane/crossplane-runtime/pkg/logging"
 	"github.com/crossplane/crossplane-runtime/pkg/resource"

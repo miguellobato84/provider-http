@@ -33,8 +33,8 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/logging"
 	"github.com/crossplane/crossplane-runtime/pkg/ratelimiter"
 
-	"github.com/new-work/provider-litellm/apis"
-	template "github.com/new-work/provider-litellm/internal/controller"
+	"github.com/miguellobato84/provider-http/apis"
+	template "github.com/miguellobato84/provider-http/internal/controller"
 )
 
 func main() {

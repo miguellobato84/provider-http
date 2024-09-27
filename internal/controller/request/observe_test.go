@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/new-work/provider-litellm/apis/request/v1alpha2"
-	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
+	"github.com/miguellobato84/provider-http/apis/request/v1alpha2"
+	httpClient "github.com/miguellobato84/provider-http/internal/clients/http"
 	"github.com/crossplane/crossplane-runtime/pkg/logging"
 	"github.com/crossplane/crossplane-runtime/pkg/test"
 	"github.com/google/go-cmp/cmp"

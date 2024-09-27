@@ -3,7 +3,7 @@ package request
 import (
 	"testing"
 
-	"github.com/new-work/provider-litellm/apis/request/v1alpha2"
+	"github.com/miguellobato84/provider-http/apis/request/v1alpha2"
 	"github.com/google/go-cmp/cmp"
 )
 
