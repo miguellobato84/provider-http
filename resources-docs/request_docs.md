@@ -4,8 +4,8 @@
 
 The `Request` resource is designed for managing a resource through HTTP requests. It allows you to define how the provider should interact with the remote system by specifying HTTP requests for create, update, and delete operations.
 
-
 ### Specification
+
 Here is an example `Request` resource definition:
 
   ```yaml
@@ -47,12 +47,14 @@ Here is an example `Request` resource definition:
 - headers: Default HTTP request headers.
 - payload: Customizable values for HTTP requests, with jq query support [jq Documentation](https://jqlang.github.io/jq/manual/#object-identifier-index).
 - mappings: List of mappings, each specifying the HTTP method, URL, and optional request body.
--  secretInjectionConfigs: Optional Configurations for secrets receiving patches from response data.
+- secretInjectionConfigs: Optional Configurations for secrets receiving patches from response data.
 
 ### Secrets Injection
-The DisposableRequest resource supports injecting data from secrets into the request's body and headers using the following syntax: {{ name:namespace:key }} (supported for body and headers only).
+
+The Request resource supports injecting data from secrets into the request's body and headers using the following syntax: {{ name:namespace:key }} (supported for body and headers only).
 
 ## PUT Mapping - Desired State
+
 The PUT mapping represents your desired state. The body in this mapping should be contained in the GET response. If it's not, a PUT request will be sent with the according body.
 
 Example PUT mapping:
@@ -70,11 +72,12 @@ Example PUT mapping:
           url: (.payload.baseUrl + "/" + (.response.body.id|tostring)) 
   ```
 
-
 ## Status
+
 The status field of the `Request` resource provides information about the execution status and results of the HTTP requests.
 
 Example `Request` status:
+
   ```yaml
   status:
     conditions:
@@ -102,7 +105,6 @@ Example `Request` status:
           - uvicorn
       statusCode: 200
   ```
-
 
 ### Usage
 

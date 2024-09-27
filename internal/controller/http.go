@@ -23,7 +23,6 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 
 	"github.com/crossplane-contrib/provider-http/internal/controller/config"
-	disposablerequest "github.com/crossplane-contrib/provider-http/internal/controller/disposablerequest"
 	request "github.com/crossplane-contrib/provider-http/internal/controller/request"
 )
 
@@ -32,7 +31,6 @@ import (
 func Setup(mgr ctrl.Manager, o controller.Options, timeout time.Duration) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options, time.Duration) error{
 		config.Setup,
-		disposablerequest.Setup,
 		request.Setup,
 	} {
 		if err := setup(mgr, o, timeout); err != nil {

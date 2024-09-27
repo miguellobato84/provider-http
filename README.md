@@ -27,25 +27,9 @@ To install `provider-http`, you have two options:
 
 `provider-http` supports the following resources:
 
-- **DisposableRequest:** Initiates a one-time HTTP request. See [DisposableRequest CRD documentation](resources-docs/disposablerequest_docs.md).
 - **Request:** Manages a resource through HTTP requests. See [Request CRD documentation](resources-docs/request_docs.md).
 
 ## Usage
-
-### DisposableRequest
-
-Create a `DisposableRequest` resource to initiate a single-use HTTP interaction:
-
-```yaml
-apiVersion: http.crossplane.io/v1alpha2
-kind: DisposableRequest
-metadata:
-  name: example-disposable-request
-spec:
-  # Add your DisposableRequest specification here
-```
-
-For more detailed examples and configuration options, refer to the [examples directory](examples/sample/).
 
 ### Request
 

@@ -4,7 +4,6 @@ import (
 	"context"
 	"testing"
 
-	v1alpha1_disposable "github.com/crossplane-contrib/provider-http/apis/disposablerequest/v1alpha2"
 	v1alpha1_request "github.com/crossplane-contrib/provider-http/apis/request/v1alpha2"
 	httpClient "github.com/crossplane-contrib/provider-http/internal/clients/http"
 	"github.com/pkg/errors"
@@ -38,32 +37,6 @@ var (
 	testDeleteMapping = v1alpha1_request.Mapping{
 		Method: "DELETE",
 		URL:    "(.payload.baseUrl + \"/\" + .response.body.id)",
-	}
-)
-
-var (
-	testDisposableForProvider = v1alpha1_disposable.DisposableRequestParameters{
-		Body:   "{\"key1\": \"value1\"}",
-		URL:    "http://example",
-		Method: "GET",
-	}
-
-	testDisposableCr = &v1alpha1_disposable.DisposableRequest{
-		Spec: v1alpha1_disposable.DisposableRequestSpec{
-			ForProvider: testDisposableForProvider,
-		},
-	}
-
-	testDisposableResource = RequestResource{
-		Resource:       testDisposableCr,
-		RequestContext: context.Background(),
-		HttpResponse: httpClient.HttpResponse{
-			StatusCode: 200,
-			Body:       `{"id":"123","username":"john_doe"}`,
-		},
-		LocalClient: &test.MockClient{
-			MockStatusUpdate: test.NewMockSubResourceUpdateFn(nil),
-		},
 	}
 )
 
@@ -197,80 +170,6 @@ func Test_SetRequestResourceStatus(t *testing.T) {
 
 			if diff := cmp.Diff(tc.args.rr.HttpRequest.URL, testRequestCr.Status.RequestDetails.URL); diff != "" {
 				t.Fatalf("SetRequestResourceStatus(...): -want request url, +got request url: %s", diff)
-			}
-		})
-	}
-}
-
-func Test_DisposableRequest_SetRequestResourceStatus(t *testing.T) {
-	type args struct {
-		rr          RequestResource
-		statusFuncs []SetRequestStatusFunc
-	}
-	type want struct {
-		err      error
-		failures int32
-	}
-	cases := map[string]struct {
-		args args
-		want want
-	}{
-		"Success": {
-			args: args{
-				rr: testDisposableResource,
-				statusFuncs: []SetRequestStatusFunc{
-					testDisposableResource.SetBody(),
-					testDisposableResource.SetHeaders(),
-					testDisposableResource.SetStatusCode(),
-					testDisposableResource.SetSynced(),
-				},
-			},
-			want: want{
-				failures: 0,
-				err:      nil,
-			},
-		},
-		"SetError": {
-			args: args{
-				rr: testDisposableResource,
-				statusFuncs: []SetRequestStatusFunc{
-					testDisposableResource.SetError(errBoom),
-					testDisposableResource.SetBody(),
-					testDisposableResource.SetHeaders(),
-					testDisposableResource.SetStatusCode(),
-				},
-			},
-			want: want{
-				failures: int32(1),
-				err:      nil,
-			},
-		},
-	}
-	for name, tc := range cases {
-		t.Run(name, func(t *testing.T) {
-			gotErr := SetRequestResourceStatus(tc.args.rr, tc.args.statusFuncs...)
-			if diff := cmp.Diff(tc.want.err, gotErr, test.EquateErrors()); diff != "" {
-				t.Fatalf("SetRequestResourceStatus(...): -want error, +got error: %s", diff)
-			}
-
-			if diff := cmp.Diff(tc.args.rr.HttpResponse.Body, testDisposableCr.Status.Response.Body); diff != "" {
-				t.Fatalf("SetRequestResourceStatus(...): -want response body, +got response body: %s", diff)
-			}
-
-			if diff := cmp.Diff(tc.args.rr.HttpResponse.Headers, testDisposableCr.Status.Response.Headers); diff != "" {
-				t.Fatalf("SetRequestResourceStatus(...): -want response headers, +got response headers: %s", diff)
-			}
-
-			if diff := cmp.Diff(tc.args.rr.HttpResponse.StatusCode, testDisposableCr.Status.Response.StatusCode); diff != "" {
-				t.Fatalf("SetRequestResourceStatus(...): -want response status code, +got response status code: %s", diff)
-			}
-
-			if diff := cmp.Diff(true, testDisposableCr.Status.Synced); diff != "" {
-				t.Fatalf("SetRequestResourceStatus(...): -want synced, +got synced: %s", diff)
-			}
-
-			if diff := cmp.Diff(tc.want.failures, testDisposableCr.Status.Failed); diff != "" {
-				t.Fatalf("SetRequestResourceStatus(...): -want failures, +got failures: %s", diff)
 			}
 		})
 	}
