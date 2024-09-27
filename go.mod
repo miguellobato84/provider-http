@@ -1,4 +1,4 @@
-module github.com/crossplane-contrib/provider-http
+module github.com/new-work/provider-litellm
 
 go 1.22.1
 

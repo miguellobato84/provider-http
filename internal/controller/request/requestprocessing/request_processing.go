@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/crossplane-contrib/provider-http/internal/jq"
+	"github.com/new-work/provider-litellm/internal/jq"
 )
 
 func ConvertStringToJQQuery(input string) string {

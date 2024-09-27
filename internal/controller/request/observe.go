@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/crossplane-contrib/provider-http/apis/request/v1alpha2"
-	httpClient "github.com/crossplane-contrib/provider-http/internal/clients/http"
-	"github.com/crossplane-contrib/provider-http/internal/controller/request/requestgen"
-	"github.com/crossplane-contrib/provider-http/internal/json"
-	"github.com/crossplane-contrib/provider-http/internal/utils"
+	"github.com/new-work/provider-litellm/apis/request/v1alpha2"
+	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
+	"github.com/new-work/provider-litellm/internal/controller/request/requestgen"
+	"github.com/new-work/provider-litellm/internal/json"
+	"github.com/new-work/provider-litellm/internal/utils"
 	"github.com/pkg/errors"
 )
 

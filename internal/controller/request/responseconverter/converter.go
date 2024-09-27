@@ -1,8 +1,8 @@
 package responseconverter
 
 import (
-	"github.com/crossplane-contrib/provider-http/apis/request/v1alpha2"
-	httpClient "github.com/crossplane-contrib/provider-http/internal/clients/http"
+	"github.com/new-work/provider-litellm/apis/request/v1alpha2"
+	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
 )
 
 // Convert HttpResponse to Response

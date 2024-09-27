@@ -9,12 +9,12 @@ import (
 	"github.com/pkg/errors"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	"github.com/crossplane-contrib/provider-http/apis/request/v1alpha2"
-	httpClient "github.com/crossplane-contrib/provider-http/internal/clients/http"
-	"github.com/crossplane-contrib/provider-http/internal/controller/request/requestprocessing"
-	datapatcher "github.com/crossplane-contrib/provider-http/internal/data-patcher"
-	json_util "github.com/crossplane-contrib/provider-http/internal/json"
-	"github.com/crossplane-contrib/provider-http/internal/utils"
+	"github.com/new-work/provider-litellm/apis/request/v1alpha2"
+	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
+	"github.com/new-work/provider-litellm/internal/controller/request/requestprocessing"
+	datapatcher "github.com/new-work/provider-litellm/internal/data-patcher"
+	json_util "github.com/new-work/provider-litellm/internal/json"
+	"github.com/new-work/provider-litellm/internal/utils"
 
 	"golang.org/x/exp/maps"
 )

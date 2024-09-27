@@ -1,7 +1,7 @@
 # ====================================================================================
 # Setup Project
 
-PROJECT_NAME := provider-http
+PROJECT_NAME := provider-litellm
 PROJECT_REPO := github.com/crossplane-contrib/$(PROJECT_NAME)
 
 PLATFORMS ?= linux_amd64 linux_arm64
@@ -49,7 +49,7 @@ CROSSPLANE_VERSION = 1.14.6
 # ====================================================================================
 # Setup Images
 
-IMAGES = provider-http
+IMAGES = provider-litellm
 -include build/makelib/imagelight.mk
 
 # ====================================================================================
@@ -72,12 +72,12 @@ XPKG_REG_ORGS ?= xpkg.upbound.io/crossplane-contrib
 # NOTE(hasheddan): skip promoting on xpkg.upbound.io as channel tags are
 # inferred.
 XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/crossplane-contrib
-XPKGS = provider-http
+XPKGS = provider-litellm
 -include build/makelib/xpkg.mk
 
 # NOTE(hasheddan): we force image building to happen prior to xpkg build so that
 # we ensure image is present in daemon.
-xpkg.build.provider-http: do.build.images
+xpkg.build.provider-litellm: do.build.images
 
 # Generate a coverage report for cobertura applying exclusions on
 # - generated file

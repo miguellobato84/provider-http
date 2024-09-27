@@ -1,7 +1,7 @@
 package request
 
 import (
-	"github.com/crossplane-contrib/provider-http/apis/request/v1alpha2"
+	"github.com/new-work/provider-litellm/apis/request/v1alpha2"
 )
 
 func getMappingByMethod(requestParams *v1alpha2.RequestParameters, method string) (*v1alpha2.Mapping, bool) {

@@ -1,4 +1,4 @@
-apiVersion: http.crossplane.io/v1alpha2
+apiVersion: litellm.nwse.io/v1alpha2
 kind: Request
 metadata:
   name: manage-user
@@ -49,16 +49,16 @@ spec:
         url: (.payload.baseUrl + "/" + (.response.body.id|tostring))
       - method: "DELETE"
         url: (.payload.baseUrl + "/" + (.response.body.id|tostring))
-    
+
     # Secrets receiving patches from response data
-    secretInjectionConfigs: 
+    secretInjectionConfigs:
       - secretRef:
           name: response-secret
           namespace: default
         secretKey: extracted-user-email
         responsePath: .body.email
         # setOwnerReference determines if the secret should be deleted when the associated resource is deleted.
-        # When injecting multiple keys into the same secret, ensure this field is set consistently for all keys.        
+        # When injecting multiple keys into the same secret, ensure this field is set consistently for all keys.
         setOwnerReference: true
       - secretRef:
           name: response-secret

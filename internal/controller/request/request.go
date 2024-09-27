@@ -35,13 +35,13 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/reconciler/managed"
 	"github.com/crossplane/crossplane-runtime/pkg/resource"
 
-	"github.com/crossplane-contrib/provider-http/apis/request/v1alpha2"
-	apisv1alpha1 "github.com/crossplane-contrib/provider-http/apis/v1alpha1"
-	httpClient "github.com/crossplane-contrib/provider-http/internal/clients/http"
-	"github.com/crossplane-contrib/provider-http/internal/controller/request/requestgen"
-	"github.com/crossplane-contrib/provider-http/internal/controller/request/statushandler"
-	datapatcher "github.com/crossplane-contrib/provider-http/internal/data-patcher"
-	"github.com/crossplane-contrib/provider-http/internal/utils"
+	"github.com/new-work/provider-litellm/apis/request/v1alpha2"
+	apisv1alpha1 "github.com/new-work/provider-litellm/apis/v1alpha1"
+	httpClient "github.com/new-work/provider-litellm/internal/clients/http"
+	"github.com/new-work/provider-litellm/internal/controller/request/requestgen"
+	"github.com/new-work/provider-litellm/internal/controller/request/statushandler"
+	datapatcher "github.com/new-work/provider-litellm/internal/data-patcher"
+	"github.com/new-work/provider-litellm/internal/utils"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
